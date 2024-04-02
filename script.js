@@ -32,6 +32,8 @@ function filtergender(person){
     return hasil;
 
 }
+
+//pake bubble sorting
 var cek = filtergender(person);
 console.log(cek);
 
@@ -55,16 +57,20 @@ var cek = sortusiaterkecil(person);
 console.log(cek);
 
 
+
+// pake insertion sort
 // person.sort(sortusiaterbesar);
 function sortusiaterbesar(person){
     // return b.usia - a.usia;
     var hadiah= [...person];
     for (let i = 0; i < person.length; i++) {
-        for (let j = 0; j < person.length-1; j++) {
-            if (hadiah[j].usia < hadiah[j + 1].usia) {     
-                temp = hadiah[j+1]                          
-                hadiah[j+1] = hadiah[j]                     
-                hadiah[j] = temp                         
+        for (let j = 1; j < person.length-1; j++) {
+            for (let k = j; k >0 ; k--) {
+                if (hadiah[k - 1].usia < hadiah[k].usia) {     
+                    temp = hadiah[k - 1]                          
+                    hadiah[k - 1] = hadiah[k]                     
+                    hadiah[k] = temp                         
+                }   
             }
         }
         
